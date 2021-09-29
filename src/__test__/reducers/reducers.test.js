@@ -20,4 +20,19 @@ describe('Test Reducers', () => {
     };
     expect(reducers(initialState, action)).toEqual(expected);
   });
+
+  test('remove element from cart', () => {
+    const initialState = {
+      cart: [ProducMock, ProducMock],
+    };
+    const payload = ProducMock;
+    const action = {
+      type: 'REMOVE_FROM_CART',
+      payload,
+    };
+    const expected = {
+      cart: [],
+    };
+    expect(reducers(initialState, action)).toEqual(expected);
+  });
 });

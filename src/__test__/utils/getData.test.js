@@ -12,4 +12,12 @@ describe('test fetch api', () => {
     });
     expect(fetch.mock.calls[0][0]).toEqual('https://google.com');
   });
+
+  test('llamar un api y capturar el error', () => {
+    fetch.mockReject(new Error('fake error message'));
+    getData('https://google.com').catch((error) => {
+      expect(error.message).toEqual('fake error message');
+    });
+    expect(fetch.mock.calls[0][0]).toEqual('https://google.com');
+  });
 });
