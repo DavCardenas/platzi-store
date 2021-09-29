@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 describe('Test Footer component', () => {
   const footer = mount(<Footer />);
   test('Renderizado del componente', () => {
-    expect(footer.length).toEqual(1);
+    expect(footer.length).toGre
   });
 
   test('Renderizado del titulo', () => {
